@@ -15,9 +15,9 @@
     formControlName="user"
     required
     >
-    <div *ngIf="user.invalid && formDir.submitted" class="validation-error">
-      <p *ngIf="user.errors?.['required']">O 'Usuário' é obrigatorio!</p>
-    </div>
+  </div>
+  <div *ngIf="user.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="user.errors?.['required']">O 'Usuário' é obrigatorio!</p>
   </div>
   <div class="form-group">
     <label for="password" >
@@ -29,9 +29,9 @@
     required
     >
     <input type="button" value="EXIBIR" (click)="showPassword()" class="btnShow">
-    <div *ngIf="password.invalid && formDir.submitted" class="validation-error">
-      <p *ngIf="password.errors?.['required']">A 'Senha' é obrigatoria!</p>
-    </div>
+  </div>
+  <div *ngIf="password.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="password.errors?.['required']">A 'Senha' é obrigatoria!</p>
   </div>
 
   <p class="msg" *ngIf="connected == true && password && user">Você se conectou com sucesso!</p>
