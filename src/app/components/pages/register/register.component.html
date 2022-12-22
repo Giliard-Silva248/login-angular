@@ -1,0 +1,70 @@
+<div class="container">
+<div class="container-img">
+  <img class="persona" src="../../../../assets/img/person.png">
+</div>
+<form (ngSubmit)="submit()" [formGroup]="loginForm" #formDir="ngForm">
+  <h2>Crie sua conta</h2>
+
+  <div class="form-group">
+    <label for="user">
+      <img  src="../../../../assets/img/account_white_24dp.png" alt="">
+    </label>
+    <input
+    type="text"
+    formControlName="user"
+    required
+    >
+    <div *ngIf="user.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="user.errors?.['required']">O 'Usuário' é obrigatorio!</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="birthDate">
+      <img src="../../../../assets/img/cake_white_24dp.png" alt="">
+    </label>
+    <input
+    type="date"
+    formControlName="birthDate"
+    required
+    >
+    <div *ngIf="birthDate.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="birthDate.errors?.['required']">A 'Data de nascimento' é obrigatoria!</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">
+      <img src="../../../../assets/img/email_white_24dp.png" alt="">
+    </label>
+    <input
+    type="email"
+    formControlName="email"
+    placeholder="user@exemplo.com"
+    required
+    >
+    <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="email.errors?.['required']">O 'email' é obrigatorio!</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">
+      <img src="../../../../assets/img/key_white_24dp.png" alt="">
+    </label>
+    <input
+    type="{{passwordSecret}}"
+    formControlName="password"
+    required
+    id="pass"
+    >
+    <input type="button" value="EXIBIR" (click)="showPassword()" class="btnShow">
+    <div *ngIf="password.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="password.errors?.['required']">A 'Senha' é obrigatoria!</p>
+    </div>
+  </div>
+
+  <p class="msg" *ngIf="registered == true && password && user">Você se registrou com sucesso!</p>
+  <input type="submit" value="REGISTRE-SE" class="btnSubmit">
+  <p>Já possui um conta? <a [routerLink]="['/']">ENTRAR</a></p>
+</form>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+
+<div class="container-img">
+  <img class="persona" src="../../../../assets/img/person.png">
+</div>
+<form (ngSubmit)="submit()" [formGroup]="loginForm" #formDir="ngForm">
+  <h2>Conecte-se</h2>
+  <div class="form-group">
+    <label for="user">
+      <img  src="../../../../assets/img/account_white_24dp.png" alt="">
+    </label>
+
+    <input
+    type="text"
+    formControlName="user"
+    required
+    >
+    <div *ngIf="user.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="user.errors?.['required']">O 'Usuário' é obrigatorio!</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password" >
+      <img src="../../../../assets/img/key_white_24dp.png" alt="">
+    </label>
+    <input
+    type="{{passwordSecret}}"
+    formControlName="password"
+    required
+    >
+    <input type="button" value="EXIBIR" (click)="showPassword()" class="btnShow">
+    <div *ngIf="password.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="password.errors?.['required']">A 'Senha' é obrigatoria!</p>
+    </div>
+  </div>
+
+  <p class="msg" *ngIf="connected == true && password && user">Você se conectou com sucesso!</p>
+  <input type="submit" value="ENTRAR" class="btnSubmit"  >
+  <p>Ainda não possui uma conta? <a [routerLink]="['/register']">REGISTRE-SE</a></p>
+</form>
+
+</div>

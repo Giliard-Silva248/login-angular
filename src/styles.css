@@ -1,1 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+
+  background-color: #344f4f;
+  background-image: linear-gradient(62deg, #344f4f 0%, #032d4f 100%);
+
+
+  color: #f0f8ff;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+  text-decoration: none;
+  color: #1dabbc;
+}
+li{
+  list-style: none;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  height: 80vh;
+  margin: auto;
+  padding: 0 10px;
+  border-radius: 15px;
+
+
+  background-color: #032d4f;
+  background-image: linear-gradient(43deg, #032d4f 0%, #01090b 19%, #01090b 66%, #032d4f 95%);
+
+
+
+  color: #f0f8ff;
+}
+h2{
+  text-align: center;
+  padding: 0 0 55px 0;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0 2%;
+  height: 100%;
+
+  padding: 0 10px;
+
+}
+.persona{
+  width: 100%;
+
+}
+.container-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input{
+  background-color: transparent;
+  border: none;
+  border: .5px solid #f0f8ff;
+  border-radius: 5px;
+  margin: 0 5px;
+  color: #f0f8ff;
+  width: 150px;
+  padding: 0 5px;
+}
+.validation-error{
+  color: red;
+  font-size: .8rem;
+  padding: 0 8px;
+  margin: 5px 15px;
+  border-left: 3px solid red;
+}
+.form-group{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: .9rem;
+}
+.btnSubmit{
+  width: 80%;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: #043CD2;
+  color: #f0f8ff;
+  cursor: pointer;
+  align-self: center;
+
+  margin: 15px 0;
+}
+.btnShow{
+  width: 70px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: #043CD2;
+  color: #f0f8ff;
+  padding: 5px 10px;
+
+  cursor: pointer;
+}
+
+
+
+@media(max-width: 1000px){
+  .container{
+    margin: 5%;
+  }
+
+}
+@media(max-width: 630px){
+  .container{
+    justify-content: center;
+    margin: 1%;
+  }
+  .btnShow{
+    width: 60px;
+    padding: 5px;
+
+  }
+  .container-img{
+    display: none;
+  }
+}
+
